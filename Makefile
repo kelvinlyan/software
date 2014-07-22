@@ -30,7 +30,7 @@ $(OBJ)/%.d : $(SRC)/%.cpp
 $(BIN)/$(TARGET) : $(objs)
 	$(CC) -o $(BIN)/$(TARGET) $^;
 
--include $(deps)
+include $(deps)
 
 .PHONY : info
 info :
