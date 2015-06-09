@@ -15,6 +15,7 @@ CCFLAGS := -I$(INC)
 vpath %.h $(INC)
 vpath %.cpp $(SRC)
 
+.PHONY : all
 all : dep $(BIN)/$(TARGET)
 
 dep :
@@ -30,7 +31,7 @@ $(OBJ)/%.d : $(SRC)/%.cpp
 $(BIN)/$(TARGET) : $(objs)
 	$(CC) -o $(BIN)/$(TARGET) $^;
 
-include $(deps)
+sinclude $(deps)
 
 .PHONY : info
 info :
